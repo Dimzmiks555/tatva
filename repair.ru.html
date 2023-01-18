@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/magnific-popup.css"/>
   <link rel="stylesheet" href="css/slicknav.min.css"/>
   <link rel="stylesheet" href="css/owl.carousel.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery-bundle.min.css" integrity="sha512-nUqPe0+ak577sKSMThGcKJauRI7ENhKC2FQAOOmdyCYSrUh0GnwLsZNYqwilpMmplN+3nO3zso8CWUgu33BDag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Main Stylesheets -->
   <link rel="stylesheet" href="css/style.css"/>
@@ -415,8 +416,8 @@
   <div class="container">
     <div class="client-text">
       <h2>Наши выполненные объекты за последние 2 года</h2>
-
-      <div class="client-text">
+      <div id="inline-gallery-container" class="inline-gallery-container"></div>
+      <!-- <div class="client-text">
         <div class="we-work-img-block">
 
           <img src="img/stroika/20.jpeg" alt="">
@@ -441,7 +442,7 @@
 
         </div>
 
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
@@ -628,8 +629,15 @@
   </div>
 </div>
 <!-- Search model end -->
-
+<style>
+  .inline-gallery-container {
+    width: 100%;
+    height: 0;
+    padding-bottom: 65%;
+  }
+</style>
 <!--====== Javascripts & Jquery ======-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js" integrity="sha512-dSI4QnNeaXiNEjX2N8bkb16B7aMu/8SI5/rE6NIa3Hr/HnWUO+EAZpizN2JQJrXuvU7z0HTgpBVk/sfGd0oW+w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.slicknav.min.js"></script>
@@ -637,6 +645,8 @@
 <script src="js/circle-progress.min.js"></script>
 <script src="js/jquery.magnific-popup.min.js"></script>
 <script src="js/main.js"></script>
+<script type="module" src="js/gallery.js"></script>
+
 
 </body>
 </html>

@@ -59,6 +59,10 @@
  h6 {
    font-size: 16px;
  }
+
+ .lg-backdrop {
+  background: #333;
+ }
  
  p {
    font-size: 14px;
@@ -654,6 +658,10 @@ body{
    -ms-flex-align: center;
    align-items: center;
  }
+
+ .hero-item span {
+  display: block !important;
+ }
  
  .hero-item h2 {
    font-size: 90px;
@@ -681,7 +689,7 @@ body{
  }
  
  .hero-item h2 span:last-child {
-   padding-right: 30px;
+   padding-right: 15px;
  }
  
  .hero-item .site-btn {
@@ -2064,6 +2072,7 @@ body{
    }
    .hero-item {
      text-align: center;
+     /* padding-left: 40px; */
    }
    .hero-item h2 {
      font-size: 60px;

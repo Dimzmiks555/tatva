@@ -12,7 +12,7 @@
 
 'use strict';
 
-$(window).on('load', function() {
+$(function() {
 	/*------------------
 		Preloder
 	--------------------*/
@@ -27,6 +27,7 @@ $(window).on('load', function() {
 	--------------------*/
 	$('.site-nav-menu > ul').slicknav({
 		appendTo:'.header-section',
+        label: document.documentElement.lang === 'hy' ? 'ՄԵՆՅՈՒ' : 'МЕНЮ',
 		closedSymbol: '<i class="fa fa-angle-down"></i>',
 		openedSymbol: '<i class="fa fa-angle-up"></i>',
 		allowParentLinks: true
@@ -43,31 +44,12 @@ $(window).on('load', function() {
 	});
 
 	
-	if (window.location.href.includes('.ru')) {
-
-		let newLocation = ''
-
-		if (window.location.href.includes('index.ru.html') ) {
-			newLocation = 'index.html'
-		} else {
-			newLocation = window.location.href.replace('.ru', '.am' )
-		}
-
-		$('.slicknav_nav').append(`<a href="${newLocation}">ՀԱՅ</a>`);
-	} else {
-
-		
-		let newLocation = ''
-
-		if (window.location.href.includes('index.html') || !window.location.href.includes('.html')) {
-			newLocation = 'index.ru.html'
-		} else {
-			newLocation = window.location.href.replace('.am.html', '.ru.html' )
-		}
-		
-
-		$('.slicknav_nav').append(`<a href="${newLocation}">РУС</a>`);
-	}
+    const pagePath = window.location.pathname;
+    const russianPage = document.documentElement.lang === 'ru';
+    const alternatePage = russianPage
+        ? (pagePath === '/' || pagePath.endsWith('index.ru.html') ? '/index.html' : pagePath.replace('.ru.html', '.am.html'))
+        : (pagePath === '/' || pagePath.endsWith('index.html') ? '/index.ru.html' : pagePath.replace('.am.html', '.ru.html'));
+    $('.slicknav_nav').append(`<a href="${alternatePage}">${russianPage ? 'ՀԱՅ' : 'РУС'}</a>`);
 
 	$('.slicknav_nav').append('<li class="search-switch-warp"><button class="search-switch"><i class="fa fa-search"></i></button></li>');
 

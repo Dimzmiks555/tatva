@@ -1,0 +1,16 @@
+name: tatva
+services:
+  web:
+    image: nginx:alpine
+    restart: unless-stopped
+    volumes:
+      - ../public:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      proxy:
+        aliases:
+          - tatva-web
+networks:
+  proxy:
+    external: true
+    name: doverie_default

@@ -1,4 +1,5 @@
 
 $(window).on("load", function (){
-    document.getElementById("homeSlider1Span").outerText = "Дорожно-строительная компания";
+    const title = document.getElementById("homeSlider1Span");
+    if (title) title.outerText = "Дорожно-строительная компания";
 })
